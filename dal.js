@@ -6,8 +6,6 @@ let db = null;
 MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client){
     console.log('Connected successfully to db server');
 
-    console.log(err);
-
     db = client.db('myproject');
 });
 
