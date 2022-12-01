@@ -1,7 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 
-const secrets = require('./secrets.json');
-const url = `mongodb+srv://${secrets.mongoUser}:${secrets.mongoPass}@myproject.7gk7w.mongodb.net/?retryWrites=true&w=majority`;
+const url = `mongodb+srv://${process.env.MONGOUSER}:${process.env.MONGOPASS}@myproject.7gk7w.mongodb.net/?retryWrites=true&w=majority`;
 let db = null;
 
 MongoClient.connect(url, {useUnifiedTopology: true}, function(err, client){
